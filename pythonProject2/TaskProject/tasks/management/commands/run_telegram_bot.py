@@ -2,7 +2,6 @@ import sqlite3
 from django.core.management.base import BaseCommand
 import telebot
 from tasks.models import Task
-from telegram.ext import CallbackContext
 
 
 bot = telebot.TeleBot("6320700758:AAFxoLeyKsL8e-wE1-yHrZ-pMqbXYJ0VJNI")
