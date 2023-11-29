@@ -13,16 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: --IP адрес сервера--
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: 22
-        script: |
-          cd папка, в которой находится проект
-          source ./venv/bin/activate
-          git pull
-          python manage.py migrate
-          python manage.py collectstatic --noinput
-          supervisorctl restart all
+        uses: appleboy/ssh-action@master
+        with:
+          host: 64.225.100.130
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd ./botdjango/pythonProject2/TaskProject
+            source ./venv/bin/activate
+            git pull
+            python manage.py migrate
+            python manage.py collectstatic --noinput
+            supervisorctl restart all
